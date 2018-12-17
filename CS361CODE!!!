@@ -1,0 +1,310 @@
+counter = 1
+
+while (counter < 21):
+
+    if counter % 5 == 0:
+
+        print(counter)
+
+    elif counter % 7 == 0:
+
+        print(counter)
+
+    elif counter % 11 == 0:
+
+        print(counter)
+
+    else:
+
+        print('')
+
+    counter += 1
+    
+def is_prime(x):
+
+    if (x > 1):
+
+        divisor = 2
+
+        for i in range(divisor,x):
+
+            if (x % i) == 0:
+
+                return False
+
+    else:
+
+        return False
+
+    return True
+    
+    
+    def is_prime(n):
+
+     if n <= 3:
+
+        print (n > 1)
+
+     elif n % 2 == 0 or n % 3 == 0:
+
+        return false
+
+        i = 5
+
+     while (i * i <= n):
+
+        if n % i == 0 or n % (i + 2) == 0:
+
+            return false
+
+            i = i + 6
+
+            return
+
+        else:
+
+            return true
+
+        return
+        
+        
+         
+
+def printPrime(upper):
+
+ 
+
+   
+
+    for num in range(1,upper + 1):
+
+       # prime numbers are greater than 1
+
+       numbers = []
+
+       if num > 1:
+
+           for i in range(2,num):
+
+               if (num % i) == 0:
+
+                   break
+
+           else:
+
+            numbers.append(num)
+
+            return numbers 
+            
+            def countPrime(x):
+
+ 
+
+    try:
+
+        enterNumber = x
+
+    except:
+
+        print("The entry MUST be an integer.")
+
+        exit()
+
+    startNumber = 1
+
+    primeList = []
+
+    while True:
+
+        # Check for the entry to greater than zero.
+
+        if enterNumber <= 0:
+
+            print("The entry MUST be greater than zero.")
+
+            break
+
+        # Check each number from 1 for prime unless prime number entry is satisfied.
+
+        if startNumber > 1:
+
+            for i in range(2,startNumber):
+
+                if (startNumber % i) == 0:
+
+                    break
+
+            else:
+
+                primeList.append(startNumber)
+
+        if (len(primeList) == enterNumber):
+
+            return primeList
+
+            break
+
+        else:
+
+            startNumber = startNumber + 1
+
+            continue
+           
+         def printList(aList):
+
+  print(*aList)
+
+   def printReverse(anotherList):
+
+         print(anotherList[::-1])
+   def numberOfItems(anotherList):
+
+count = 0
+
+for x in anotherList:
+
+count++
+
+
+def printAll(anotherList):
+
+allElements = []
+
+for temp in anotherList:
+
+for temp2 in temp:
+
+allElements.append(temp2)
+
+
+def product(list):
+
+p = 1
+
+for i  in list:
+
+p *= list[i]
+
+Def recursive(list):
+
+If len(list) == 1:
+
+return list[0]
+
+return recursive(list[0]) * recursive(list[1:])
+
+def recur_fibo(n):
+
+   if n <= 1:
+
+       return n
+
+   else:
+
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+       
+       
+     from optparse import OptionParser
+
+ 	
+import os.path
+
+ 	
+import re
+
+ 	
+ 
+
+ 	
+regex = re.compile(("([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`"
+
+ 	
+                    "{|}~-]+)*(@|\sat\s)(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(\.|"
+
+ 	
+                    "\sdot\s))+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)"))
+
+ 	
+ 
+
+ 	
+def file_to_str(filename):
+
+ 	
+    """Returns the contents of filename as a string."""
+
+ 	
+    with open(filename) as f:
+
+ 	
+        return f.read().lower() # Case is lowered to prevent regex mismatches.
+
+ 	
+ 
+
+ 	
+def get_emails(s):
+
+ 	
+    """Returns an iterator of matched emails found in string s."""
+
+ 	
+    # Removing lines that start with '//' because the regular expression
+
+ 	
+    # mistakenly matches patterns like 'http://foo@bar.com' as '//foo@bar.com'.
+
+ 	
+    return (email[0] for email in re.findall(regex, s) if not email[0].startswith('//'))
+
+ 	
+ 
+
+ 	
+if __name__ == '__main__':
+
+ 	
+    parser = OptionParser(usage="Usage: python %prog [FILE]...")
+
+ 	
+    # No options added yet. Add them here if you ever need them.
+
+ 	
+    options, args = parser.parse_args()
+
+ 	
+ 
+
+ 	
+    if not args:
+
+ 	
+        parser.print_usage()
+
+ 	
+        exit(1)
+
+ 	
+ 
+
+ 	
+    for arg in args:
+
+ 	
+        if os.path.isfile(arg):
+
+ 	
+            for email in get_emails(file_to_str(arg)):
+
+ 	
+                print email
+
+ 	
+        else:
+
+ 	
+            print '"{}" is not a file.'.format(arg)
+
+ 	
+            parser.print_usage()
+
